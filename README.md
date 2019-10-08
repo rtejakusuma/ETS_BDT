@@ -11,23 +11,23 @@
             3. Apache web server --> 1 buah
         - Spesifikasi Hardware
             1. Server Database<br>
-                - OS menggunakan bento/ubuntu-16.04<br>
-                - RAM 512MB
+                - OS : `bento/ubuntu-16.04`<br>
+                - RAM : `512` MB
                 - MySQL server
             2. Proxy<br>
-                - MySQL
-                - Menggunakan bento/ubuntu-16.04
-                - RAM 512MB
+                - Proxy MySQL
+                - OS : `bento/ubuntu-16.04`
+                - RAM : `512` MB
             3. Apache Webserver<br>
                 - Windown 10
-                - RAM 4096MB
+                - RAM : `4096` MB
         - Pembagian IP<br>
             1. Server Database<br>
-                - 192.168.16.12
-                - 192.168.16.13
-                - 192.168.16.14
+                - 192.168.16.12 (MySQL Server 1)
+                - 192.168.16.13 (MySQL Server 2)
+                - 192.168.16.14 (MySQL Server 3)
             2. Proxy<br>
-                - 192.168.16.15
+                - 192.168.16.15 (Proxy MySQL)
             3. Apache Webserver<br>
                 - localhost
 
