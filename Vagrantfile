@@ -6,10 +6,13 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 
+
 Vagrant.configure("2") do |config|
   
   # MySQL Cluster dengan 3 node
   (1..3).each do |i|
+    config.winrm.timeout = 600
+    config.vm.boot_timeout = 600
     config.vm.define "db#{i}" do |node|
       node.vm.hostname = "db#{i}"
       node.vm.box = "bento/ubuntu-16.04"
@@ -37,7 +40,7 @@ Vagrant.configure("2") do |config|
     proxy.vm.provider "virtualbox" do |vb|
       vb.name = "proxy"
       vb.gui = false
-      vb.memory = "1024"
+      vb.memory = "512"
     end
 
     proxy.vm.provision "shell", path: "sh/proxy.sh", privileged: false
