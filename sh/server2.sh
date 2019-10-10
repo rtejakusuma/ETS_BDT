@@ -35,7 +35,8 @@ sudo cp /vagrant/cnf/server2.cnf /etc/mysql/my.cnf
 sudo service mysql restart
 
 # Cluster bootstrapping
- sudo mysql -u root -padmin < /vagrant/sql/cluster_bootstrap.sql
- sudo mysql -u root -padmin < /vagrant/sql/addition_to_sys.sql
- sudo mysql -u root -padmin < /vagrant/sql/proxy_user.sql
+  sudo mysql -u root -padmin < /vagrant/sql/member.sql
+# sudo mysql -u root -padmin < /vagrant/sql/cluster_bootstrap.sql
+# sudo mysql -u root -padmin < /vagrant/sql/addition_to_sys.sql
+# sudo mysql -u root -padmin < /vagrant/sql/proxy_user.sql
 # sudo mysql -u root -padmin < /vagrant/sql/elaporan.sql
