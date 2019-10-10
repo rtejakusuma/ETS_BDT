@@ -29,7 +29,8 @@ sudo ufw allow 33061
 sudo ufw allow 3306
 
 # Copy MySQL configurations
-sudo cp /vagrant/my11.cnf /etc/mysql/my.cnf
+sudo mv /etc/mysql/my.cnf /etc/mysql/my.cnf.backup
+sudo cp /vagrant/sql/server2.cnf /etc/mysql/my.cnf
 
 # Restart MySQL services
 sudo service mysql restart
@@ -37,5 +38,5 @@ sudo service mysql restart
 # Cluster bootstrapping
  sudo mysql -u root -padmin < /vagrant/sql/cluster_bootstrap.sql
  sudo mysql -u root -padmin < /vagrant/sql/addition_to_sys.sql
- sudo mysql -u root -padmin < /vagrant/sql/proxysql_user.sql
+ sudo mysql -u root -padmin < /vagrant/sql/proxy_user.sql
 # sudo mysql -u root -padmin < /vagrant/sql/elaporan.sql
