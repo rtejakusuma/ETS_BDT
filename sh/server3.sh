@@ -29,6 +29,7 @@ sudo ufw allow 33061
 sudo ufw allow 3306
 
 # Copy MySQL configurations
+sudo mv /etc/mysql/my.cnf /etc/mysql/my.cnf.backup
 sudo cp /vagrant/cnf/server3.cnf /etc/mysql/my.cnf
 
 # Restart MySQL services
