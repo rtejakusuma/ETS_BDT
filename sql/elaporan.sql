@@ -972,6 +972,23 @@ CREATE TABLE IF NOT EXISTS `tipelaporan_per_opd` (
 
 LOCK TABLES `tipelaporan_per_opd` WRITE;
 /*!40000 ALTER TABLE `tipelaporan_per_opd` DISABLE KEYS */;
+INSERT INTO `tipelaporan_per_opd` (`id_opd`, `id_tipe`) VALUES
+	(8, 1),
+	(8, 2),
+	(8, 3),
+	(8, 4),
+	(8, 5),
+	(8, 6),
+	(8, 7),
+	(8, 8),
+	(8, 9),
+	(8, 10),
+	(8, 11),
+	(8, 12),
+	(8, 13),
+	(8, 14),
+	(8, 15),
+	(8, 16);
 /*!40000 ALTER TABLE `tipelaporan_per_opd` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -986,6 +1003,23 @@ CREATE TABLE IF NOT EXISTS `tipe_laporan` (
 
 LOCK TABLES `tipe_laporan` WRITE;
 /*!40000 ALTER TABLE `tipe_laporan` DISABLE KEYS */;
+INSERT INTO `tipe_laporan` (`id_tipe`, `nama_laporan`, `kode_tipe`) VALUES
+	(1, 'Realisasi Fisik', 'realisasi_fisik'),
+	(2, 'Rekap Pokja', 'rekap_pokja'),
+	(3, 'Rekap Tender', 'rekap_tender'),
+	(4, 'Laporan Kinerja Triwulan', 'laporan_kinerja_triwulan'),
+	(5, 'Pemantauan Tindak Lanjut', 'pemantauan_tindak_lanjut'),
+	(6, 'Jadwal Pelaksanaan', 'jadwal_pelaksanaan'),
+	(7, 'Laporan RB Area Perubahan', 'laporan_rb_area_perubahan'),
+	(8, 'SOTK', 'sotk'),
+	(9, 'IKM', 'ikm'),
+	(10, 'Pelayanan Publik', 'pelayanan_publik'),
+	(11, 'Tatalaksana', 'tatalaksana'),
+	(12, 'Monitoring Kelembagaan', 'monitoring_kelembagaan'),
+	(13, 'Laporan RB Quick Wins', 'laporan_rb_quick_wins'),
+	(14, 'Laporan RB ZI WBK', 'laporan_rb_zi_wbk'),
+	(15, 'Laporan RB Prioritas', 'laporan_rb_prioritas'),
+	(16, 'Laporan RB Fokus', 'laporan_rb_fokus');
 /*!40000 ALTER TABLE `tipe_laporan` ENABLE KEYS */;
 UNLOCK TABLES;
 
