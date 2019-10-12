@@ -43,7 +43,7 @@
     - Membuat `vagrantfile`<br>
     Dibuat dengan mengetikkan<br>
     ```bash
-    vagrant init
+    sudo vagrant init
     ```
     - Mengedit `vagrantfile`
     Setelah membuat `vagrantfile` lalu edit dengan menggunakan `visual studio code` menjadi sebagai berikut
@@ -1652,3 +1652,67 @@
         ```
 
 3. Menjalankan Vagrant
+    - Setelah dirasa semua provisonnya sudah maka jalankan VM dengan cara
+    ```bash
+    sudo vagrant up
+    ```
+    - Setelah proses `sudo vagrant up` selesai maka bisa masuk ke VM yang ada dengan cara
+        - Untuk masuk ke Database 1
+        ```bash
+        sudo vagrant ssh db1
+        ```
+        - Untuk masuk ke Database 2
+        ```bash
+        sudo vagrant ssh db2
+        ```
+        - Untuk masuk ke Database 3
+        ```bash
+        sudo vagrant ssh db3
+        ```
+        - Untuk masuk ke Proxy
+        ```bash
+        sudo vagrant ssh proxy
+        ```
+    - Masuk ke VM proxy dengan cara `sudo vagrant ssh proxy` lalu lakukan
+    ```bash
+    sudo mysql -u admin -padmin -h 127.0.0.1 -P 6032 < /vagrant/sql/proxysql.sql
+    ```
+    Kenapa perlu melakukan provisiong diatas karena script tersebut tidak bisa berjalan ketika melakukan `vagrant up` sehingga dilakukan secara manual.
+
+4. Web APP
+    - Nama Aplikasi<br>
+    **ELAPORAN**
+    - Deskripsi Aplikasi<br>
+    **Elaporan** ialah merupakan sistem manajemen laporan yang berbasis web (menggunakan CodeIgniter) yang diperuntukan untuk semua OPD yang ada di Kota Madiun. Sehingga ketika pegawai dari OPD tersebut ingin membuat sebuah laporan tinggal mengisi saja isian untuk laporan tersebut sesuai dengan tipenya. Jika dalam laporan tersebut ada data yang berasal dari API aplikasi lain maka pegawai tersebut tidak perlu memasukkan data lagi. Selain itu **Elaporan** juga menyediakan untuk langsung  mengunduh laporan yang telah dibuat menjadi excel.
+
+    - Merubah Setting Database<br>
+    Agar aplikasi ini bisa berjalan pada tugas BDT ini ada beberapa hal yang harus diiubah yaitu
+        - Database Connection 
+        ```bash
+        $active_group = 'elaporan';
+        ```
+        ```bash
+        $db['elaporan'] = array(
+            'dsn'	=> '',
+            'hostname' => '192.168.16.12:6033',
+            'username' => 'proxuser',
+            'password' => 'proxpassword',
+            'database' => 'elaporan',
+            'dbdriver' => 'mysqli',
+            'dbprefix' => '',
+            'pconnect' => FALSE,
+            'db_debug' => (ENVIRONMENT !== 'production'),
+            'cache_on' => FALSE,
+            'cachedir' => '',
+            'char_set' => 'utf8',
+            'dbcollat' => 'utf8_general_ci',
+            'swap_pre' => '',
+            'encrypt' => FALSE,
+            'compress' => FALSE,
+            'stricton' => FALSE,
+            'failover' => array(),
+            'save_queries' => TRUE
+        );
+        ```
+        - Struktur Database<br>
+        Karena ketika melakukan dump pada tugas ini untuk setiap tabelnya harus memiliki `primary key` maka untuk tabel yang awal nya tidak memiliki `primary key` sehingga perlu ditambahkan dan jadilah file `/vagrant/sql/elaporan.sql`
