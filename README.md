@@ -1604,6 +1604,8 @@
 
         COMMIT;
         ```
+        - File `elaporanv2.sql` <br>
+        Yang membedakan file ini terhadap `elaporan.sql` ialah tidak adanya Foreign Key dalam databasenya karena jika ada FK bisa menyebabkan `mysql has gone` karena keterbatasan memori dll. Selain tidak adanya FK semuanya sama semua.
         - File `member.sql`
         ```bash
         SET SQL_LOG_BIN=0;
@@ -1683,7 +1685,7 @@
     ```bash
     sudo mysql -u root -padmin < /vagrant/sql/elaporan.sql
     ```
-    Perlu melakukan perintah diatas untuk memasukkan data dump yang sudah di modifikasi dari web appnya.
+    Perlu melakukan perintah diatas untuk memasukkan data dump yang sudah di modifikasidari web appnya.
 
 4. Menjalankan Web Server<br>
     Pada kali ini menggunakan PHP sebagai webserver dengan cara menjalankan perintah ini
@@ -1762,4 +1764,5 @@
     - Setelah itu kita hidupkan kembali server yang kita matikan tadi dan cek di databasenya apakah database yang kita buat sebelumnya sudah ada atau belum
     
      ![failasdfa](https://user-images.githubusercontent.com/32433590/66716461-1d414580-edf8-11e9-9f02-c49514f26f98.png)
+     
      Jika sudah ada maka failovernya telah berjalan.
