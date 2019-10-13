@@ -1679,6 +1679,12 @@
     ```
     Kenapa perlu melakukan provisiong diatas karena script tersebut tidak bisa berjalan ketika melakukan `vagrant up` sehingga dilakukan secara manual.
 
+    - Masuk ke VM salah satu database lalu lakukan
+    ```bash
+    sudo mysql -u root -padmin < /vagrant/sql/elaporan.sql
+    ```
+    Perlu melakukan perintah diatas untuk memasukkan data dari web appnya.
+
 4. Menjalankan Web Server<br>
     Pada kali ini menggunakan PHP sebagai webserver dengan cara menjalankan perintah ini
     ```bash
@@ -1756,5 +1762,4 @@
     - Setelah itu kita hidupkan kembali server yang kita matikan tadi dan cek di databasenya apakah database yang kita buat sebelumnya sudah ada atau belum
     
      ![failasdfa](https://user-images.githubusercontent.com/32433590/66716461-1d414580-edf8-11e9-9f02-c49514f26f98.png)
-     
      Jika sudah ada maka failovernya telah berjalan.
