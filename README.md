@@ -1733,14 +1733,27 @@
     ```bash
     select @@hostname
     ```
+    ![fasdfasdf](https://user-images.githubusercontent.com/32433590/66716451-fb47c300-edf7-11e9-9e5c-bb3f34cb8297.png)
+    
     - Setelah mengatahui `hostname` pada proxy maka sekarang mematikan service dari `hostname` tersebut dengan cara
     ```bash
     service mysql stop
     ```
+    ![failasdfa](https://user-images.githubusercontent.com/32433590/66716461-1d414580-edf8-11e9-9f02-c49514f26f98.png)
+    
     - Setelah langkah yang sebelumnya berhasil maka cek kembali `hostname` pada proxy dengan cara yang sama
     ```bash
     select @@hostname
     ```
     - Jika failovernya berhasil maka `hostname` dari proxy tadi akan berubah
+    
+    ![fadsfasdfasfads](https://user-images.githubusercontent.com/32433590/66716467-30ecac00-edf8-11e9-95fa-7651f8f9ce96.png)
+    
     - Sekarang akan mengetes failover dari segi datanya karena tadi ada salah satu server yang sudah mati maka mencoba masuk ke server lain dan masuk ke mysqlnya dan membuat sebuah database seperti gambar dibawah
+    
+    ![fail4](https://user-images.githubusercontent.com/32433590/66716476-49f55d00-edf8-11e9-8d65-d23bf71c739f.png)
+    
     - Setelah itu kita hidupkan kembali server yang kita matikan tadi dan cek di databasenya apakah database yang kita buat sebelumnya sudah ada atau belum
+    
+     ![failasdfa](https://user-images.githubusercontent.com/32433590/66716461-1d414580-edf8-11e9-9f02-c49514f26f98.png)
+     Jika sudah ada maka failovernya telah berjalan.
