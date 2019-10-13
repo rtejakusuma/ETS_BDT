@@ -1679,7 +1679,14 @@
     ```
     Kenapa perlu melakukan provisiong diatas karena script tersebut tidak bisa berjalan ketika melakukan `vagrant up` sehingga dilakukan secara manual.
 
-4. Web APP
+4. Menjalankan Web Server
+    Pada kali ini menggunakan PHP sebagai webserver dengan cara menjalankan perintah ini
+    ```bash
+    php -S localhost:8000
+    ```
+    Sehingga wes app bisa di akses di `localhost:8000`
+
+5. Web APP
     - Nama Aplikasi<br>
     **ELAPORAN**
     - Deskripsi Aplikasi<br>
@@ -1716,3 +1723,24 @@
         ```
         - Struktur Database<br>
         Karena ketika melakukan dump pada tugas ini untuk setiap tabelnya harus memiliki `primary key` maka untuk tabel yang awal nya tidak memiliki `primary key` sehingga perlu ditambahkan dan jadilah file `/vagrant/sql/elaporan.sql`
+
+6. Simulai FailOver
+    - Pertama kita masuk ke proxy dengan cara `sudo vagrant ssh proxy` dan masuk ke mysql yang sebagai user dengan cara
+    ```bash
+    sudo mysql -u proxuser -pproxuser -h 127.0.0.1 -P 6033
+    ```
+    Lalu setelah masuk ke dalam `>mysql` lalu cek hostnamenya dengan cara
+    ```bash
+    select @@hostname
+    ```
+    - Setelah mengatahui `hostname` pada proxy maka sekarang mematikan service dari `hostname` tersebut dengan cara
+    ```bash
+    service mysql stop
+    ```
+    - Setelah langkah yang sebelumnya berhasil maka cek kembali `hostname` pada proxy dengan cara yang sama
+    ```bash
+    select @@hostname
+    ```
+    - Jika failovernya berhasil maka `hostname` dari proxy tadi akan berubah
+    - Sekarang akan mengetes failover dari segi datanya karena tadi ada salah satu server yang sudah mati maka mencoba masuk ke server lain dan masuk ke mysqlnya dan membuat sebuah database seperti gambar dibawah
+    - Setelah itu kita hidupkan kembali server yang kita matikan tadi dan cek di databasenya apakah database yang kita buat sebelumnya sudah ada atau belum
