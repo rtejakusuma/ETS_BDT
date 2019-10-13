@@ -1756,4 +1756,5 @@
     - Setelah itu kita hidupkan kembali server yang kita matikan tadi dan cek di databasenya apakah database yang kita buat sebelumnya sudah ada atau belum
     
      ![failasdfa](https://user-images.githubusercontent.com/32433590/66716461-1d414580-edf8-11e9-9f02-c49514f26f98.png)
+     
      Jika sudah ada maka failovernya telah berjalan.
