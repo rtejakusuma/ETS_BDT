@@ -623,6 +623,9 @@
     - Deskripsi Aplikasi<br>
     **Elaporan** ialah merupakan sistem manajemen laporan yang berbasis web (menggunakan CodeIgniter) yang diperuntukan untuk semua OPD yang ada di Kota Madiun. Sehingga ketika pegawai dari OPD tersebut ingin membuat sebuah laporan tinggal mengisi saja isian untuk laporan tersebut sesuai dengan tipenya. Jika dalam laporan tersebut ada data yang berasal dari API aplikasi lain maka pegawai tersebut tidak perlu memasukkan data lagi. Selain itu **Elaporan** juga menyediakan untuk langsung  mengunduh laporan yang telah dibuat menjadi excel.
 
+    - Download Web App <br>
+    Web app ini bisa di download di [elaporan](https://github.com/rtejakusuma/elaporan)
+    
     - Merubah Setting Database<br>
     Agar aplikasi ini bisa berjalan pada tugas BDT ini ada beberapa hal yang harus diiubah yaitu
         - Database Connection 
