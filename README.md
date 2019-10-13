@@ -1683,7 +1683,7 @@
     ```bash
     sudo mysql -u root -padmin < /vagrant/sql/elaporan.sql
     ```
-    Perlu melakukan perintah diatas untuk memasukkan data dari web appnya.
+    Perlu melakukan perintah diatas untuk memasukkan data dump yang sudah di modifikasi dari web appnya.
 
 4. Menjalankan Web Server<br>
     Pada kali ini menggunakan PHP sebagai webserver dengan cara menjalankan perintah ini
