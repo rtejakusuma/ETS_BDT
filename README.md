@@ -1679,7 +1679,7 @@
     ```
     Kenapa perlu melakukan provisiong diatas karena script tersebut tidak bisa berjalan ketika melakukan `vagrant up` sehingga dilakukan secara manual.
 
-4. Menjalankan Web Server
+4. Menjalankan Web Server<br>
     Pada kali ini menggunakan PHP sebagai webserver dengan cara menjalankan perintah ini
     ```bash
     php -S localhost:8000
